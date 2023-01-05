@@ -1,27 +1,21 @@
 const cats = prompt("Inserisci numero gatti");
 const catsEachRow = prompt("Inserisci quanti gatti vuoi per fila");
-let rows = cats / catsEachRow;
+let rows = Math.ceil(cats / catsEachRow);
+let extraCatsNeeded = rows * catsEachRow - cats; 
 
 if (rows < 2 && rows >= 1){
-  console.log("c'e " + Math.floor(rows) + " row");
-}
-else if (rows < 1){
-  console.log("ci sono " + Math.floor(rows) + " row");
+  console.log("c'e " + Math.ceil(rows) + " row");
 }
 
 else {
-  console.log("ci sono " + Math.floor(rows) + " row");
+  console.log("ci sono " + Math.ceil(rows) + " row");
 }
-
-
-let extraCats = cats % catsEachRow;
 
 if (cats % catsEachRow == 0) {
-  console.log("non ci sono gatti rimasti fuori dalle row");
+  console.log("non ci sono gatti da aggiungere per completare l'ultima row");
 }
-  else if (extraCats == 1){
-    console.log("c'e " + extraCats + " gatto rimasto fuori");
-  }
   else{
-    console.log("ci sono " + extraCats + " gatti rimasti fuori");
+    console.log("ci sono " + extraCatsNeeded  + " gatti mancanti");
   }
+
+  // Im using math.floor() cuz it makes more sense
