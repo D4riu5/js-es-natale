@@ -17,5 +17,3 @@ if (cats % catsEachRow == 0) {
   else{
     console.log("ci sono " + extraCatsNeeded  + " gatti mancanti");
   }
-
-  // Im using math.floor() cuz it makes more sense
